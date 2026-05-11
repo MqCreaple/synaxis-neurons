@@ -2,7 +2,9 @@ package com.creaple.synaxis_neurons.registry;
 
 import com.creaple.synaxis_neurons.SynaxisNeurons;
 import com.creaple.synaxis_neurons.block.NeuronsCimulinkBlock;
+import com.creaple.synaxis_neurons.cimulink.VectorAddKinds;
 import com.creaple.synaxis_neurons.cimulink.VectorConstantKinds;
+import com.creaple.synaxis_neurons.cimulink.VectorNormKinds;
 import com.simibubi.create.foundation.data.BlockStateGen;
 import com.simibubi.create.foundation.data.ModelGen;
 import com.simibubi.create.foundation.data.SharedProperties;
@@ -16,6 +18,10 @@ public final class NeuronsBlocks {
 
     public static final BlockEntry<NeuronsCimulinkBlock> VECTOR_CONSTANT =
             registerCimulink(VectorConstantKinds.VECTOR_CONSTANT);
+    public static final BlockEntry<NeuronsCimulinkBlock> VECTOR_NORM =
+            registerCimulink(VectorNormKinds.VECTOR_NORM);
+    public static final BlockEntry<NeuronsCimulinkBlock> VECTOR_ADD =
+            registerCimulink(VectorAddKinds.VECTOR_ADD);
 
     private NeuronsBlocks() {
     }

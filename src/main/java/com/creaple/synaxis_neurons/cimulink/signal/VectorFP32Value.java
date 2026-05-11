@@ -1,5 +1,6 @@
-package com.creaple.synaxis_neurons.cimulink;
+package com.creaple.synaxis_neurons.cimulink.signal;
 
+import com.creaple.synaxis_neurons.cimulink.signal.VectorFP32SignalType;
 import com.verr1.synaxis.foundation.cimulink.core.signal.SignalKind;
 
 import java.util.Arrays;
@@ -7,10 +8,11 @@ import java.util.Arrays;
 /**
  * A signal value carrying a {@code float[]} (VECTOR_FP32).
  * <p>
- * This does NOT implement the sealed {@code com.verr1.synaxis.foundation.cimulink.core.signal.SignalValue}
- * interface (it is sealed in Synaxis and cannot be extended from outside).
- * VECTOR_FP32-aware components handle the float[] data directly and use
- * {@link SignalKind} only as a type-discriminator.
+ * This is a plain record — it does NOT implement the sealed {@code
+ * com.verr1.synaxis.foundation.cimulink.core.signal.SignalValue}
+ * hierarchy. VECTOR_FP32 data is transported through the signal system
+ * via {@link VectorFP32SignalHelper}, which wraps the float[] as a
+ * {@code SignalValue.Bundle} of {@code SignalValue.Real} entries.
  */
 public record VectorFP32Value(float[] data) {
 

@@ -1,5 +1,7 @@
 {
   "block.synaxis_neurons.vector_constant": "Vector Constant",
+  "block.synaxis_neurons.vector_norm": "Vector Norm",
+  "block.synaxis_neurons.vector_add": "Vector Add",
 
   "itemGroup.synaxis_neurons.neurons": "Synaxis Neurons"
 }

@@ -29,6 +29,8 @@ public final class NeuronsCreativeTabs {
     public static void addItems(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == NEURONS.getKey()) {
             accept(event, NeuronsBlocks.VECTOR_CONSTANT.asStack());
+            accept(event, NeuronsBlocks.VECTOR_NORM.asStack());
+            accept(event, NeuronsBlocks.VECTOR_ADD.asStack());
         }
     }
 

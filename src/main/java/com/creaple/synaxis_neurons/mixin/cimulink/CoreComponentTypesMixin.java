@@ -1,6 +1,8 @@
 package com.creaple.synaxis_neurons.mixin.cimulink;
 
+import com.creaple.synaxis_neurons.cimulink.component.VectorAddComponent;
 import com.creaple.synaxis_neurons.cimulink.component.VectorConstantComponent;
+import com.creaple.synaxis_neurons.cimulink.component.VectorNormComponent;
 import com.verr1.synaxis.foundation.cimulink.core.component.ComponentRegistry;
 import com.verr1.synaxis.foundation.cimulink.core.component.builtin.CoreComponentTypes;
 import org.spongepowered.asm.mixin.Mixin;
@@ -20,5 +22,7 @@ public abstract class CoreComponentTypesMixin {
             CallbackInfoReturnable<ComponentRegistry> cir
     ) {
         registry.register(new VectorConstantComponent());
+        registry.register(new VectorNormComponent());
+        registry.register(new VectorAddComponent());
     }
 }

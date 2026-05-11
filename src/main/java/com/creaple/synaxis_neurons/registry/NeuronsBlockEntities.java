@@ -11,7 +11,9 @@ public final class NeuronsBlockEntities {
             SynaxisNeurons.getRegistrate()
                     .blockEntity("cimulink_endpoint_neurons", CimulinkEndpointBlockEntity::new)
                     .validBlocks(new NonNullSupplier[]{
-                            NeuronsBlocks.VECTOR_CONSTANT
+                            NeuronsBlocks.VECTOR_CONSTANT,
+                            NeuronsBlocks.VECTOR_NORM,
+                            NeuronsBlocks.VECTOR_ADD
                     })
                     .register();
 

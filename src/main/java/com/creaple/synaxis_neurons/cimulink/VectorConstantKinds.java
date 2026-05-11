@@ -50,7 +50,6 @@ public final class VectorConstantKinds {
                     "Vector Constant",
                     CimulinkKindSupport.minecraftTexture("block/smooth_stone"),
                     VectorConstantComponent.ID,
-                    CimulinkKindSupport.PHYSICS_CONTROL_BINDING,
                     VectorConstantKinds::configFactory,
                     VectorConstantKinds::defineState,
                     VectorConstantKinds::defineCommands,

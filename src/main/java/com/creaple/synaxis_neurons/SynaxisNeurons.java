@@ -1,8 +1,13 @@
 package com.creaple.synaxis_neurons;
 
+import com.creaple.synaxis_neurons.cimulink.VectorAddKinds;
 import com.creaple.synaxis_neurons.cimulink.VectorConstantKinds;
+import com.creaple.synaxis_neurons.cimulink.component.VectorAddComponent;
+import com.creaple.synaxis_neurons.cimulink.component.VectorAddConfig;
 import com.creaple.synaxis_neurons.cimulink.component.VectorConstantComponent;
 import com.creaple.synaxis_neurons.cimulink.component.VectorConstantConfig;
+import com.creaple.synaxis_neurons.cimulink.component.VectorNormComponent;
+import com.creaple.synaxis_neurons.cimulink.component.VectorNormConfig;
 import com.creaple.synaxis_neurons.registry.NeuronsBlockEntities;
 import com.creaple.synaxis_neurons.registry.NeuronsBlocks;
 import com.creaple.synaxis_neurons.registry.NeuronsCreativeTabs;
@@ -40,6 +45,16 @@ public class SynaxisNeurons {
                 VectorConstantComponent.ID,
                 VectorConstantConfig.CODEC,
                 () -> new VectorConstantConfig(List.of(1.0, 2.0, 3.0))
+        );
+        ComponentConfigCodecs.register(
+                VectorNormComponent.ID,
+                VectorNormConfig.CODEC,
+                () -> new VectorNormConfig(VectorNormConfig.NormMode.L2, false)
+        );
+        ComponentConfigCodecs.register(
+                VectorAddComponent.ID,
+                VectorAddConfig.CODEC,
+                () -> new VectorAddConfig(2, List.of(1.0, 1.0))
         );
 
         LOGGER.info("Synaxis Neurons initialized");

@@ -1,4 +1,4 @@
-package com.creaple.synaxis_neurons.cimulink;
+package com.creaple.synaxis_neurons.cimulink.signal;
 
 import com.verr1.synaxis.foundation.cimulink.core.signal.SignalKind;
 import com.verr1.synaxis.foundation.cimulink.core.signal.SignalType;

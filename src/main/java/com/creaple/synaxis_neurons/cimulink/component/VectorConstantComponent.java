@@ -1,21 +1,11 @@
 package com.creaple.synaxis_neurons.cimulink.component;
 
-import com.creaple.synaxis_neurons.cimulink.VectorFP32SignalType;
-import com.verr1.synaxis.foundation.cimulink.core.component.ComponentConfig;
-import com.verr1.synaxis.foundation.cimulink.core.component.ComponentMemory;
-import com.verr1.synaxis.foundation.cimulink.core.component.ComponentSchema;
-import com.verr1.synaxis.foundation.cimulink.core.component.ComponentSemantics;
-import com.verr1.synaxis.foundation.cimulink.core.component.ComponentType;
-import com.verr1.synaxis.foundation.cimulink.core.component.ComponentTypeId;
-import com.verr1.synaxis.foundation.cimulink.core.component.EmptyComponentMemory;
-import com.verr1.synaxis.foundation.cimulink.core.component.EvalContext;
-import com.verr1.synaxis.foundation.cimulink.core.signal.OutputPort;
-import com.verr1.synaxis.foundation.cimulink.core.signal.PortDef;
-import com.verr1.synaxis.foundation.cimulink.core.signal.SignalReader;
-import com.verr1.synaxis.foundation.cimulink.core.signal.SignalValue;
-import com.verr1.synaxis.foundation.cimulink.core.signal.SignalWriter;
+import com.creaple.synaxis_neurons.cimulink.signal.VectorFP32SignalHelper;
+import com.creaple.synaxis_neurons.cimulink.signal.VectorFP32SignalType;
+import com.creaple.synaxis_neurons.cimulink.signal.VectorFP32Value;
+import com.verr1.synaxis.foundation.cimulink.core.component.*;
+import com.verr1.synaxis.foundation.cimulink.core.signal.*;
 
-import java.util.LinkedHashMap;
 import java.util.List;
 
 public final class VectorConstantComponent implements ComponentType {
@@ -56,13 +46,12 @@ public final class VectorConstantComponent implements ComponentType {
     public void evaluate(EvalContext ctx, ComponentConfig config,
                          ComponentMemory memory, SignalReader in, SignalWriter out) {
         VectorConstantConfig cfg = config(config);
-        // Encode double[] as a Bundle of SignalValue.Real entries
-        LinkedHashMap<String, SignalValue> fields = new LinkedHashMap<>();
         double[] elements = cfg.elements();
+        float[] data = new float[elements.length];
         for (int i = 0; i < elements.length; i++) {
-            fields.put("_" + i, new SignalValue.Real(elements[i]));
+            data[i] = (float) elements[i];
         }
-        out.write(OUT, new SignalValue.Bundle(fields));
+        out.write(OUT, VectorFP32SignalHelper.write(new VectorFP32Value(data)));
     }
 
     private static VectorConstantConfig config(ComponentConfig config) {

@@ -1,0 +1,6 @@
+{
+  "properties": {
+    "sable:mass": 0.025
+  },
+  "selector": "synaxis_neurons:vector_add"
+}

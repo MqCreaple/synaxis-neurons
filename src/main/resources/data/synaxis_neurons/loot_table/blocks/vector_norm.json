@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "synaxis_neurons:vector_constant"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "synaxis_neurons:blocks/vector_constant"
+}

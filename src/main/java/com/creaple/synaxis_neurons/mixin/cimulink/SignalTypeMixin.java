@@ -1,6 +1,6 @@
 package com.creaple.synaxis_neurons.mixin.cimulink;
 
-import com.creaple.synaxis_neurons.cimulink.VectorFP32SignalType;
+import com.creaple.synaxis_neurons.cimulink.signal.VectorFP32SignalType;
 import com.verr1.synaxis.foundation.cimulink.core.signal.SignalKind;
 import com.verr1.synaxis.foundation.cimulink.core.signal.SignalType;
 import com.verr1.synaxis.foundation.cimulink.core.signal.SignalValue;
