@@ -1,0 +1,11 @@
+{
+  "required": false,
+  "package": "com.creaple.synaxis_neurons.mixin",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+    "cimulink.CoreComponentTypesMixin",
+    "cimulink.SignalTypeMixin"
+  ]
+}
